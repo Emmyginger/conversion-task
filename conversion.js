@@ -4,7 +4,10 @@ convertfahrTempToCelsius = (fahrTemp) => {
     }
     let regex = /[a-zA-Z]/
     regexResult = regex.test(fahrTemp)
-    if (regexResult === true && typeof fahrTemp !== 'object' && typeof fahrTemp !== null) {
+    if (typeof fahrTemp === "boolean") {
+      console.log(`${fahrTemp}  is not a valid number but a/an boolean`);
+    }
+    else if (regexResult === true && typeof fahrTemp !== 'object' && typeof fahrTemp !== null) {
       console.log(`'${fahrTemp}'  is not a valid number but a/an string`)
     }
     else if (Array.isArray(fahrTemp) === true) {
@@ -26,7 +29,7 @@ checkYuGiOh = (input) => {
     let regex = /[a-zA-Z]/
     regexResult = regex.test(input)
   
-    if (regexResult === true && typeof input !== 'object' || Array.isArray(input) === true || typeof input === 'object' && typeof input !== null && !Array.isArray(input)) {
+    if (regexResult === true && typeof input !== 'object' || Array.isArray(input) === true || typeof input === 'object' && typeof input !== null && !Array.isArray(input)|| typeof input === "boolean") {
       console.log(`invalid parameter:${JSON.stringify(input)}`);
       
     } else {
