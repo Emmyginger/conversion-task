@@ -3,7 +3,7 @@ checkYuGiOh = (input) => {
     regexResult = regex.test(input)
   
     if (regexResult === true && typeof input !== 'object' || Array.isArray(input) === true || typeof input === 'object' && typeof input !== null && !Array.isArray(input)) {
-      console.log(`invalid parameter:${JSON.stringify(input)}`);
+      return (`invalid parameter:${JSON.stringify(input)}`);
       
     } else {
   
@@ -41,5 +41,5 @@ checkYuGiOh = (input) => {
     }
   
 }
-checkYuGiOh(10);
+console.log(checkYuGiOh(10));
   
